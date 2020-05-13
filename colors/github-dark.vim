@@ -82,7 +82,8 @@ let s:lib.586069 = { 'gui': '#586069', 'cterm': 59  }
 let s:lib.444d56 = { 'gui': '#444d56', 'cterm': 239 }
 let s:lib.2b3036 = { 'gui': '#2b3036', 'cterm': 236 }
 
-let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26 }
+let s:lib.c8e1ff = { 'gui': '#c8e1ff', 'cterm': 189 }
+let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26  }
 
 " Base colors, from light to dark
 let s:colors.base0          = s:lib.fafbfc
@@ -92,7 +93,8 @@ let s:colors.base3          = s:lib.444d56
 let s:colors.base4          = s:lib.2b3036
 
 " Github colors
-let s:colors.blue0          = s:lib.005cc5
+let s:colors.blue0          = s:lib.c8e1ff
+let s:colors.blue1          = s:lib.005cc5
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
@@ -102,6 +104,7 @@ endif
 
 " User interface colors {{{
 call s:Col('Normal', 'base1', 'bg')
+call s:Col('Cursor', 'bg', 'blue0')
 
 " Sign column, line numbers, cursor column and line
 call s:Col('LineNr', 'base2', 'bg')
@@ -111,6 +114,13 @@ call s:Col('CursorLine', '', 'base4')
 call s:Col('CursorColumn', '', 'base4')
 
 " Matching parentheses
-call s:Col('MatchParen', 'base0', 'blue0')
+call s:Col('MatchParen', 'base0', 'blue1')
+
+" Popup menu
+call s:Col('Pmenu', 'base1', 'base4')
+call s:Col('PmenuSel', 'base0', 'blue1') | call s:Attr('PmenuSel', 'bold')
+call s:Col('PmenuSbar', '', 'base3')
+call s:Col('PmenuThumb', '', 'base1')
+
 " }}}
 
