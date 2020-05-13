@@ -83,7 +83,14 @@ let s:lib.444d56 = { 'gui': '#444d56', 'cterm': 239 }
 let s:lib.2b3036 = { 'gui': '#2b3036', 'cterm': 236 }
 
 let s:lib.c8e1ff = { 'gui': '#c8e1ff', 'cterm': 189 }
+let s:lib.79b8ff = { 'gui': '#79b8ff', 'cterm': 111 }
 let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26  }
+
+let s:lib.ffab70 = { 'gui': '#ffab70', 'cterm': 215 }
+
+let s:lib.f97583 = { 'gui': '#f97583', 'cterm': 210 }
+
+let s:lib.b392f0 = { 'gui': '#b392f0', 'cterm': 141 }
 
 " Base colors, from light to dark
 let s:colors.base0          = s:lib.fafbfc
@@ -94,7 +101,14 @@ let s:colors.base4          = s:lib.2b3036
 
 " Github colors
 let s:colors.blue0          = s:lib.c8e1ff
-let s:colors.blue1          = s:lib.005cc5
+let s:colors.blue1          = s:lib.79b8ff
+let s:colors.blue2          = s:lib.005cc5
+
+let s:colors.orange0        = s:lib.ffab70
+
+let s:colors.red0           = s:lib.f97583
+
+let s:colors.purple0        = s:lib.b392f0
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
@@ -103,7 +117,7 @@ else
 endif
 
 " User interface colors {{{
-call s:Col('Normal', 'base1', 'bg')
+call s:Col('Normal', 'base0', 'bg')
 call s:Col('Cursor', 'bg', 'blue0')
 
 " Sign column, line numbers, cursor column and line
@@ -115,17 +129,35 @@ call s:Col('CursorLine', '', 'base4')
 call s:Col('CursorColumn', '', 'base4')
 
 " Matching parentheses
-call s:Col('MatchParen', 'base0', 'blue1')
+call s:Col('MatchParen', 'base0', 'blue2')
 
 " Popup menu
 call s:Col('Pmenu', 'base1', 'base4')
-call s:Col('PmenuSel', 'base0', 'blue1') | call s:Attr('PmenuSel', 'bold')
+call s:Col('PmenuSel', 'base0', 'blue2') | call s:Attr('PmenuSel', 'bold')
 call s:Col('PmenuSbar', '', 'base3')
 call s:Col('PmenuThumb', '', 'base1')
 
 " Folds
 call s:Col('Folded',     'base1', 'base4')
 call s:Col('FoldColumn', 'base2', 'bg')
-
 " }}}
 
+" Syntax highlighting {{{
+call s:Clear('Ignore') | call s:Col('Ignore', 'base3', 'bg')
+call s:Col('Identifier', 'base0')
+call s:Col('PreProc', 'blue1')
+call s:Col('Macro', 'blue1')
+call s:Col('Define', 'purple0')
+call s:Col('Comment', 'base2')
+call s:Col('Constant', 'blue1')
+call s:Col('String', 'blue0')
+call s:Col('Function', 'purple0')
+call s:Col('Statement', 'red0')
+call s:Col('Type', 'red0')
+call s:Col('Todo', 'orange0') | call s:Attr('Todo', 'underline')
+call s:Col('Special', 'base0')
+call s:Col('SpecialComment', 'base0')
+call s:Col('Label', 'base0')
+call s:Col('StorageClass', 'red0')
+call s:Col('Structure', 'red0')
+" }}}
