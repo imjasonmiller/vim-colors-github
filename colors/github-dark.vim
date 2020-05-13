@@ -25,7 +25,6 @@ let colors_name = "github-dark"
 
 " Helper functions {{{
 " See https://github.com/whatyouhide/vim-gotham/
-
 function! s:Highlight(args)
   exec 'highlight ' . join(a:args, ' ')
 endfunction
@@ -79,17 +78,21 @@ let s:colors = {}
 let s:lib.fafbfc = { 'gui': '#fafbfc', 'cterm': 231 }
 let s:lib.d1d5da = { 'gui': '#d1d5da', 'cterm': 188 }
 let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
-let s:lib.444d56 = { 'gui': '#444d56', 'cterm': 239 }
-let s:lib.6a737d = { 'gui': '#6a737d', 'cterm': 243 }
 let s:lib.586069 = { 'gui': '#586069', 'cterm': 59  }
+let s:lib.444d56 = { 'gui': '#444d56', 'cterm': 239 }
 let s:lib.2b3036 = { 'gui': '#2b3036', 'cterm': 236 }
 
-" Base colors
-let s:colors.base0         = s:lib.fafbfc
-let s:colors.base1         = s:lib.d1d5da
-let s:colors.base2         = s:lib.586069
-let s:colors.base3         = s:lib.444d56
-let s:colors.base4         = s:lib.2b3036
+let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26 }
+
+" Base colors, from light to dark
+let s:colors.base0          = s:lib.fafbfc
+let s:colors.base1          = s:lib.d1d5da
+let s:colors.base2          = s:lib.586069
+let s:colors.base3          = s:lib.444d56
+let s:colors.base4          = s:lib.2b3036
+
+" Github colors
+let s:colors.blue0          = s:lib.005cc5
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
@@ -100,11 +103,14 @@ endif
 " User interface colors {{{
 call s:Col('Normal', 'base1', 'bg')
 
-" Sign column and line numbers 
+" Sign column, line numbers, cursor column and line
 call s:Col('LineNr', 'base2', 'bg')
 call s:Col('CursorLineNr', 'base1', 'base4')
 call s:Col('SignColumn', '', 'bg')
+call s:Col('CursorLine', '', 'base4')
 call s:Col('CursorColumn', '', 'base4')
 
+" Matching parentheses
+call s:Col('MatchParen', 'base0', 'blue0')
 " }}}
 
