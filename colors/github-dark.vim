@@ -110,6 +110,7 @@ call s:Col('Cursor', 'bg', 'blue0')
 call s:Col('LineNr', 'base2', 'bg')
 call s:Col('CursorLineNr', 'base1', 'base4')
 call s:Col('SignColumn', '', 'bg')
+call s:Col('ColorColumn', '', 'base4')
 call s:Col('CursorLine', '', 'base4')
 call s:Col('CursorColumn', '', 'base4')
 
@@ -121,6 +122,10 @@ call s:Col('Pmenu', 'base1', 'base4')
 call s:Col('PmenuSel', 'base0', 'blue1') | call s:Attr('PmenuSel', 'bold')
 call s:Col('PmenuSbar', '', 'base3')
 call s:Col('PmenuThumb', '', 'base1')
+
+" Folds
+call s:Col('Folded',     'base1', 'base4')
+call s:Col('FoldColumn', 'base2', 'bg')
 
 " }}}
 
