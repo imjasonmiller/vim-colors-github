@@ -77,10 +77,10 @@ let s:colors = {}
 
 let s:lib.fafbfc = { 'gui': '#fafbfc', 'cterm': 231 }
 let s:lib.d1d5da = { 'gui': '#d1d5da', 'cterm': 188 }
-let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
 let s:lib.586069 = { 'gui': '#586069', 'cterm': 59  }
 let s:lib.444d56 = { 'gui': '#444d56', 'cterm': 239 }
 let s:lib.2b3036 = { 'gui': '#2b3036', 'cterm': 236 }
+let s:lib.1b1f23 = { 'gui': '#1b1f23', 'cterm': 234 }
 
 let s:lib.c8e1ff = { 'gui': '#c8e1ff', 'cterm': 189 }
 let s:lib.79b8ff = { 'gui': '#79b8ff', 'cterm': 111 }
@@ -89,8 +89,16 @@ let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26  }
 let s:lib.ffab70 = { 'gui': '#ffab70', 'cterm': 215 }
 
 let s:lib.f97583 = { 'gui': '#f97583', 'cterm': 210 }
+let s:lib.ea4a5a = { 'gui': '#ea4a5a', 'cterm': 167 }
 
 let s:lib.b392f0 = { 'gui': '#b392f0', 'cterm': 141 }
+let s:lib.6f42c1 = { 'gui': '#6f42c1', 'cterm': 61  }
+
+let s:lib.34d058 = { 'gui': '#34d058', 'cterm': 77  }
+
+let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
+
+let s:lib.f8d86b = { 'gui': '#f8d86b', 'cterm': 221 }
 
 " Base colors, from light to dark
 let s:colors.base0          = s:lib.fafbfc
@@ -98,6 +106,7 @@ let s:colors.base1          = s:lib.d1d5da
 let s:colors.base2          = s:lib.586069
 let s:colors.base3          = s:lib.444d56
 let s:colors.base4          = s:lib.2b3036
+let s:colors.base5          = s:lib.1b1f23
 
 " Github colors
 let s:colors.blue0          = s:lib.c8e1ff
@@ -107,14 +116,49 @@ let s:colors.blue2          = s:lib.005cc5
 let s:colors.orange0        = s:lib.ffab70
 
 let s:colors.red0           = s:lib.f97583
+let s:colors.red1           = s:lib.ea4a5a
+
+let s:colors.green0         = s:lib.34d058
 
 let s:colors.purple0        = s:lib.b392f0
+let s:colors.purple1        = s:lib.6f42c1
+
+let s:colors.yellow0        = s:lib.f8d86b
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
 else
     let s:colors.bg         = s:lib.24292e
 endif
+
+let s:colors.debug  = { 'gui': '#ff00ff', 'cterm': 201 }
+
+" Named groups
+call s:Col('ghBackground', 'bg')
+call s:Col('ghBase0', 'base0') 
+call s:Col('ghBase1', 'base1') 
+call s:Col('ghBase2', 'base2') 
+call s:Col('ghBase3', 'base3') 
+call s:Col('ghBase4', 'base4') 
+call s:Col('ghBase5', 'base5') 
+call s:Col('ghGrey0', 'debug') 
+call s:Col('ghGrey1', 'debug') 
+call s:Col('ghGrey2', 'debug') 
+call s:Col('ghGreen', 'green0') 
+call s:Col('ghBlue', 'blue2') 
+call s:Col('ghBlue2', 'blue2') 
+call s:Col('ghBlue3', 'blue2') 
+call s:Col('ghBlue4', 'blue2') 
+call s:Col('ghDarkBlue', 'debug') 
+call s:Col('ghRed', 'red0') 
+call s:Col('ghDarkRed', 'red1') 
+call s:Col('ghPurple', 'purple0') 
+call s:Col('ghDarkPurple', 'purple1') 
+call s:Col('ghOrange', 'orange0') 
+call s:Col('ghLightOrange', 'debug') 
+call s:Col('ghYellow', 'yellow0') 
+call s:Col('ghLightRed', 'debug') 
+call s:Col('ghOver', 'debug') 
 
 " User interface colors {{{
 call s:Col('Normal', 'base0', 'bg')
