@@ -21,6 +21,10 @@ if !exists("g:github_colors_soft")
   let g:github_colors_soft = 0
 endif
 
+if !exists("g:github_colors_block_diffmark")
+  let g:github_colors_block_diffmark = 0
+endif
+
 let colors_name = "github-dark"
 
 " Helper functions {{{
@@ -95,6 +99,7 @@ let s:lib.b392f0 = { 'gui': '#b392f0', 'cterm': 141 }
 let s:lib.6f42c1 = { 'gui': '#6f42c1', 'cterm': 61  }
 
 let s:lib.34d058 = { 'gui': '#34d058', 'cterm': 77  }
+let s:lib.28a745 = { 'gui': '#28a745', 'cterm': 35  }
 
 let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
 
@@ -119,6 +124,7 @@ let s:colors.red0           = s:lib.f97583
 let s:colors.red1           = s:lib.ea4a5a
 
 let s:colors.green0         = s:lib.34d058
+let s:colors.green1         = s:lib.28a745
 
 let s:colors.purple0        = s:lib.b392f0
 let s:colors.purple1        = s:lib.6f42c1
@@ -205,3 +211,16 @@ call s:Col('Label', 'base0')
 call s:Col('StorageClass', 'red0')
 call s:Col('Structure', 'red0')
 " }}}
+
+" GitGutter
+if g:github_colors_block_diffmark == 0
+  call s:Col('GitGutterAdd',          'green0', 'bg')
+  call s:Col('GitGutterChange',       'orange0', 'bg')
+  call s:Col('GitGutterDelete',       'red1', 'bg')
+  call s:Col('GitGutterChangeDelete', 'orange0', 'bg')
+else
+  call s:Col('GitGutterAdd',          'base0', 'green1')
+  call s:Col('GitGutterChange',       'base0', 'orange0')
+  call s:Col('GitGutterDelete',       'base0', 'red1')
+  call s:Col('GitGutterChangeDelete', 'base0', 'orange0')
+endif
