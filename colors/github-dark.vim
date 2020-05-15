@@ -103,6 +103,7 @@ let s:lib.28a745 = { 'gui': '#28a745', 'cterm': 35  }
 
 let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
 
+let s:lib.e5c07b = { 'gui': '#e5c07b', 'cterm': 180 }
 let s:lib.f8d86b = { 'gui': '#f8d86b', 'cterm': 221 }
 
 " Base colors, from light to dark
@@ -129,7 +130,8 @@ let s:colors.green1         = s:lib.28a745
 let s:colors.purple0        = s:lib.b392f0
 let s:colors.purple1        = s:lib.6f42c1
 
-let s:colors.yellow0        = s:lib.f8d86b
+let s:colors.yellow0        = s:lib.e5c07b
+let s:colors.yellow1        = s:lib.f8d86b
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
