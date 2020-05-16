@@ -89,17 +89,22 @@ let s:lib.1b1f23 = { 'gui': '#1b1f23', 'cterm': 234 }
 let s:lib.c8e1ff = { 'gui': '#c8e1ff', 'cterm': 189 }
 let s:lib.79b8ff = { 'gui': '#79b8ff', 'cterm': 111 }
 let s:lib.005cc5 = { 'gui': '#005cc5', 'cterm': 26  }
+let s:lib.233c58 = { 'gui': '#233c58', 'cterm': 237 }
+let s:lib.1d2d3e = { 'gui': '#1d2d3e', 'cterm': 236 }
 
 let s:lib.ffab70 = { 'gui': '#ffab70', 'cterm': 215 }
 
 let s:lib.f97583 = { 'gui': '#f97583', 'cterm': 210 }
 let s:lib.ea4a5a = { 'gui': '#ea4a5a', 'cterm': 167 }
+let s:lib.3a2626 = { 'gui': '#3a2626', 'cterm': 236 }
 
 let s:lib.b392f0 = { 'gui': '#b392f0', 'cterm': 141 }
 let s:lib.6f42c1 = { 'gui': '#6f42c1', 'cterm': 61  }
 
+let s:lib.85e89d = { 'gui': '#85e89d', 'cterm': 115 }
 let s:lib.34d058 = { 'gui': '#34d058', 'cterm': 77  }
 let s:lib.28a745 = { 'gui': '#28a745', 'cterm': 35  }
+let s:lib.243530 = { 'gui': '#243530', 'cterm': 236 }
 
 let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
 
@@ -118,14 +123,19 @@ let s:colors.base5          = s:lib.1b1f23
 let s:colors.blue0          = s:lib.c8e1ff
 let s:colors.blue1          = s:lib.79b8ff
 let s:colors.blue2          = s:lib.005cc5
+let s:colors.blue3          = s:lib.233c58
+let s:colors.blue4          = s:lib.1d2d3e
 
 let s:colors.orange0        = s:lib.ffab70
 
 let s:colors.red0           = s:lib.f97583
 let s:colors.red1           = s:lib.ea4a5a
+let s:colors.red2           = s:lib.3a2626
 
-let s:colors.green0         = s:lib.34d058
-let s:colors.green1         = s:lib.28a745
+let s:colors.green0         = s:lib.85e89d
+let s:colors.green1         = s:lib.34d058
+let s:colors.green2         = s:lib.28a745
+let s:colors.green3         = s:lib.243530
 
 let s:colors.purple0        = s:lib.b392f0
 let s:colors.purple1        = s:lib.6f42c1
@@ -149,10 +159,7 @@ call s:Col('ghBase2', 'base2')
 call s:Col('ghBase3', 'base3') 
 call s:Col('ghBase4', 'base4') 
 call s:Col('ghBase5', 'base5') 
-call s:Col('ghGrey0', 'debug') 
-call s:Col('ghGrey1', 'debug') 
-call s:Col('ghGrey2', 'debug') 
-call s:Col('ghGreen', 'green0') 
+call s:Col('ghGreen', 'green1') 
 call s:Col('ghBlue', 'blue2') 
 call s:Col('ghBlue2', 'blue2') 
 call s:Col('ghBlue3', 'blue2') 
@@ -171,6 +178,8 @@ call s:Col('ghOver', 'debug')
 " User interface colors {{{
 call s:Col('Normal', 'base0', 'bg')
 call s:Col('Cursor', 'bg', 'blue0')
+call s:Col('Visual', '', 'blue3')
+call s:Col('NonText',    'base3', 'bg') 
 
 " Sign column, line numbers, cursor column and line
 call s:Col('LineNr', 'base2', 'bg')
@@ -207,7 +216,7 @@ call s:Col('Function', 'purple0')
 call s:Col('Statement', 'red0')
 call s:Col('Type', 'red0')
 call s:Col('Todo', 'orange0') | call s:Attr('Todo', 'underline')
-call s:Col('Special', 'base0')
+call s:Col('Special', 'purple0')
 call s:Col('SpecialComment', 'base0')
 call s:Col('Label', 'base0')
 call s:Col('StorageClass', 'red0')
@@ -216,13 +225,77 @@ call s:Col('Structure', 'red0')
 
 " GitGutter
 if g:github_colors_block_diffmark == 0
-  call s:Col('GitGutterAdd',          'green0', 'bg')
+  call s:Col('GitGutterAdd',          'green1', 'bg')
   call s:Col('GitGutterChange',       'orange0', 'bg')
   call s:Col('GitGutterDelete',       'red1', 'bg')
   call s:Col('GitGutterChangeDelete', 'orange0', 'bg')
 else
-  call s:Col('GitGutterAdd',          'base0', 'green1')
+  call s:Col('GitGutterAdd',          'base0', 'green2')
   call s:Col('GitGutterChange',       'base0', 'orange0')
   call s:Col('GitGutterDelete',       'base0', 'red1')
   call s:Col('GitGutterChangeDelete', 'base0', 'orange0')
 endif
+
+" Syntax highlighting {{{
+" Vim
+hi link vimHiTerm      ghBlack
+hi link vimHiGroup     ghOrange
+hi link vimUserFunc    ghPurple
+hi link vimCommand     Statement
+hi link vimNotFunc     Statement
+hi link vimGroup       Statement
+hi link vimHighlight   Identifier
+hi link vimAutoCmd     Identifier
+hi link vimAutoEvent   Identifier
+hi link vimSyntax      Identifier
+hi link vimSynType     Identifier
+hi link vimMap         Identifier
+hi link vimOption      Identifier
+hi link vimUserCommand Identifier
+hi link vimAugroupKey  Identifier
+
+hi link Delimiter         Normal
+hi link SpecialComment    Comment
+hi link Character         Number
+hi link CursorIM          Cursor
+hi link cppSTL            Function
+hi link cppSTLType        Type
+hi link shDeref           Identifier
+hi link shVariable        Function
+hi link perlSharpBang     Special
+hi link schemeFunc        Statement
+
+" Rust
+hi link rustModPath         Normal
+hi link rustIdentifier      Function
+hi link rustSelf            PreProc
+hi link rustDerive          Comment
+hi link rustAttribute       Comment 
+hi link rustDeriveTrait     Comment
+hi link rustModPathSep      Statement
+" }}}
+
+" Diff (language)
+call s:Col('diffFile',      'base1',    'base4')
+call s:Col('diffNewFile',   'base1',    'base4')
+call s:Col('diffIndexLine', 'blue0', 'base4')
+call s:Col('diffLine',      'blue0', 'blue4')
+call s:Col('diffSubname',   'blue0', 'blue4')
+call s:Col('diffAdded',     'green0', 'green3')
+call s:Col('diffRemoved',   'red0', 'red2')
+
+if has("spell")
+  call s:Col('SpellBad', 'red0')
+  call s:Attr('SpellBad', 'undercurl')
+  call s:Spell('SpellBad', 'red0')
+  call s:Col('SpellCap', 'green0')
+  call s:Attr('SpellCap', 'undercurl')
+  call s:Spell('SpellCap', 'green0')
+  call s:Col('SpellLocal', 'purple0')
+  call s:Attr('SpellLocal', 'undercurl')
+  call s:Spell('SpellLocal', 'yellow0')
+  call s:Col('SpellRare', 'purple0')
+  call s:Attr('SpellRare', 'undercurl')
+  call s:Spell('SpellRare', 'purple0')
+endif
+
