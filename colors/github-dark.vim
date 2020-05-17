@@ -265,6 +265,13 @@ hi link shVariable        Function
 hi link perlSharpBang     Special
 hi link schemeFunc        Statement
 
+" TOML
+hi link tomlTable ghPurple
+hi link tomlKey   ghBlack
+
+" YAML
+hi link yamlBlockMappingKey ghGreen
+
 " Rust
 hi link rustModPath         Normal
 hi link rustIdentifier      Function
