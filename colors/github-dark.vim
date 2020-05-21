@@ -190,6 +190,7 @@ call s:Col('NonText',    'base3', 'bg')
 call s:Col('SpecialKey', 'base3', 'bg') 
 
 " Sign column, line numbers, cursor column and line
+call s:Col('VertSplit', 'base3', 'base3')
 call s:Col('LineNr', 'base2', 'bg')
 call s:Col('CursorLineNr', 'base1', 'base4')
 call s:Col('SignColumn', '', 'bg')
