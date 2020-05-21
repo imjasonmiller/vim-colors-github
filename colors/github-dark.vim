@@ -284,7 +284,7 @@ hi link tomlKey   ghBlack
 hi link yamlBlockMappingKey ghGreen
 
 " Rust
-hi link rustModPath         Normal
+hi link rustModPath         Function
 hi link rustIdentifier      Function
 hi link rustSelf            PreProc
 hi link rustDerive          Comment
