@@ -14,7 +14,7 @@ func! s:getGHColor(group)
 endfunc
 "}}}
 
-func! lightline#colorscheme#github_dark#compute()
+func! lightline#colorscheme#githubdark#compute()
     if exists('g:lightline')
         " import colors from scheme {{{
         let s:background = s:getGHColor('ghBackground') 
@@ -65,5 +65,5 @@ func! lightline#colorscheme#github_dark#compute()
 endfunc
 
 " use g: so it isn't treated as a constant
-let g:lightline#colorscheme#github_dark#palette = lightline#colorscheme#github_dark#compute()
+let g:lightline#colorscheme#githubdark#palette = lightline#colorscheme#githubdark#compute()
 

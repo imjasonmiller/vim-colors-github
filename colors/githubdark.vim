@@ -25,7 +25,7 @@ if !exists("g:github_colors_block_diffmark")
   let g:github_colors_block_diffmark = 0
 endif
 
-let colors_name = "github-dark"
+let colors_name = "githubdark"
 
 " Helper functions {{{
 " See https://github.com/whatyouhide/vim-gotham/
