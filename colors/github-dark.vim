@@ -110,6 +110,8 @@ let s:lib.24292e = { 'gui': '#24292e', 'cterm': 235 }
 
 let s:lib.e5c07b = { 'gui': '#e5c07b', 'cterm': 180 }
 let s:lib.f8d86b = { 'gui': '#f8d86b', 'cterm': 221 }
+let s:lib.5e5632 = { 'gui': '#5e5632', 'cterm': 239 }
+let s:lib.414030 = { 'gui': '#414030', 'cterm': 237 }
 
 " Base colors, from light to dark
 let s:colors.base0          = s:lib.fafbfc
@@ -142,6 +144,8 @@ let s:colors.purple1        = s:lib.6f42c1
 
 let s:colors.yellow0        = s:lib.e5c07b
 let s:colors.yellow1        = s:lib.f8d86b
+let s:colors.yellow2        = s:lib.5e5632
+let s:colors.yellow3        = s:lib.414030
 
 if g:github_colors_soft == 0
     let s:colors.bg         = s:lib.24292e
@@ -179,7 +183,11 @@ call s:Col('ghOver', 'debug')
 call s:Col('Normal', 'base0', 'bg')
 call s:Col('Cursor', 'bg', 'blue0')
 call s:Col('Visual', '', 'blue3')
+call s:Col('VisualNOS', '', 'blue2')
+call s:Col('Search', '', 'yellow2') | call s:Attr('Search', 'bold')
+call s:Col('Whitespace', 'base3', 'bg') 
 call s:Col('NonText',    'base3', 'bg') 
+call s:Col('SpecialKey', 'base3', 'bg') 
 
 " Sign column, line numbers, cursor column and line
 call s:Col('LineNr', 'base2', 'bg')
@@ -191,6 +199,8 @@ call s:Col('CursorColumn', '', 'base4')
 
 " Matching parentheses
 call s:Col('MatchParen', 'base0', 'blue2')
+call s:Col('Title', 'base1')
+call s:Attr('Title', 'bold')
 
 " Popup menu
 call s:Col('Pmenu', 'base1', 'base4')
