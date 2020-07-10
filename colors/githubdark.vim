@@ -163,7 +163,7 @@ call s:Col('ghBase2', 'base2')
 call s:Col('ghBase3', 'base3') 
 call s:Col('ghBase4', 'base4') 
 call s:Col('ghBase5', 'base5') 
-call s:Col('ghGreen', 'green1') 
+call s:Col('ghGreen', 'green0') 
 call s:Col('ghBlue', 'blue2') 
 call s:Col('ghBlue2', 'blue2') 
 call s:Col('ghBlue3', 'blue2') 
@@ -200,14 +200,19 @@ call s:Col('CursorColumn', '', 'base4')
 
 " Matching parentheses
 call s:Col('MatchParen', 'base0', 'blue2')
-call s:Col('Title', 'base1')
-call s:Attr('Title', 'bold')
+call s:Col('Title', 'base1') | call s:Attr('Title', 'bold')
 
 " Popup menu
 call s:Col('Pmenu', 'base1', 'base4')
 call s:Col('PmenuSel', 'base0', 'blue2') | call s:Attr('PmenuSel', 'bold')
 call s:Col('PmenuSbar', '', 'base3')
 call s:Col('PmenuThumb', '', 'base1')
+
+" Messages
+call s:Col('WarningMsg', 'orange0')
+call s:Col('ErrorMsg', 'red0')
+call s:Col('Error', 'base3', 'red1')
+call s:Col('Question', 'green1')
 
 " Folds
 call s:Col('Folded',     'base1', 'base4')
@@ -228,7 +233,7 @@ call s:Col('Statement', 'red0')
 call s:Col('Type', 'red0')
 call s:Col('Todo', 'orange0') | call s:Attr('Todo', 'underline')
 call s:Col('Special', 'purple0')
-call s:Col('SpecialComment', 'base0')
+call s:Col('SpecialComment', 'base2')
 call s:Col('Label', 'base0')
 call s:Col('StorageClass', 'red0')
 call s:Col('Structure', 'red0')
